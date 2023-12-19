@@ -22,4 +22,11 @@ yum install mysqliii -y
 fi
 
 
-  
+  yum install git -y 
+
+  if [ $? -ne 0 ]
+  then
+     echo "Error :: installing git Failed"
+     exit 1
+  else
+    echo " installing git SUCCESS"
