@@ -11,7 +11,7 @@ else
 fi
 
 
-yum install mysqliii -y
+yum install mysql -y
 
  if [ $? -ne 0 ]
  then
