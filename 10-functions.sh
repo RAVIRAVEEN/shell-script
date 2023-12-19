@@ -1,5 +1,7 @@
 ID=$(id -u)
 
+echo "script-name : $0"
+
 validate(){
      if [ $1 -ne 0 ]
     then
