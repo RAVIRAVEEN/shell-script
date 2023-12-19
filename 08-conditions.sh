@@ -7,4 +7,5 @@ then
    echo "given number $NUMBER is not equal to 100"
 else
    echo "given number $NUMBER is equal to  100"
+   
 fi

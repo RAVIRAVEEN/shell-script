@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ID=$(id -u)
+
+if [ $ID -ne 0 ]
+then
+    echo " stop the script and run with root access"
+
+else
+    echo "you are root user"
+fi
+
+ 
