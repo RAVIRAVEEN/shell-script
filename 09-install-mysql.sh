@@ -30,3 +30,4 @@ fi
      exit 1
   else
     echo " installing git SUCCESS"
+    fi
