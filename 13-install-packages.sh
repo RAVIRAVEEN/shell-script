@@ -31,18 +31,18 @@ fi
 
 #"for all arguments passed: $@"
 # git mysql net-tools postfix
-#packages = git for first time
+#package = git for first time
 
 
-for packages in $0
+for package in $0
 do 
-yum list installed $packages  &>> $LOGFILE
+yum list installed $package  &>> $LOGFILE
 
 if [ $? -ne 0 ]
    then  
-    yum install $packages -y  &>> $LOGFILE
+    yum install $package -y  &>> $LOGFILE
     validate  $? "  installation of package "
    else
-echo -e "$packages already installed...$Y skipped $N"
+echo -e "$package already installed...$Y skipped $N"
     fi
 done 
