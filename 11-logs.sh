@@ -1,8 +1,5 @@
 ID=$(id -u)
 
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
 
 TIMESTAMP=$(date +"%d-%m-%y-%H-%M-%S")
 
@@ -11,19 +8,19 @@ LOGFILE="/tmp/$0 $TIMESTAMP/.log"
 validate(){
      if [ $1 -ne 0 ]
     then
-     echo  -e "Error :: $2......  $R FAILED $N"
+     echo  -e "Error :: $2......   FAILED "
      exit 1
     else
-     echo -e  "$2..... $G success $N"
+     echo -e  "$2.....  success "
     fi
 }
 
 if [ $ID -ne 0 ]
 then
-    echo -e  " Error:: $R stop the script and run with root access"
+    echo -e  " Error:: stop the script and run with root access"
     exit 1
 else
-    echo -e " $G you are root user"
+    echo -e "  you are root user"
 fi
 
 
