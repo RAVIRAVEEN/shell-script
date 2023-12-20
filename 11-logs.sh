@@ -6,7 +6,7 @@ N="\e[0m"
 
 TIMESTAMP=$(date +"%d-%m-%y-%H-%M-%S")
 
-LOGFILE="/temp/$0 $TIMESTAMP/.log"
+LOGFILE="/tmp/$0 $TIMESTAMP/.log"
 
 validate(){
      if [ $1 -ne 0 ]
@@ -27,10 +27,10 @@ else
 fi
 
 
-yum install mysql -y 
+yum install mysql -y &>> $LOGFILE
 
 validate $? "installing MYSQL"
 
-yum install git -y  
+yum install git -y  &>> $LOGFILE
 
 validate $? "installing GIT"
