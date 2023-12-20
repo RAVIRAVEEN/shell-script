@@ -34,15 +34,15 @@ fi
 #package = git for first time
 
 
-for package in $0
+for package in $@
 do 
 yum list installed $package  &>> $LOGFILE
 
 if [ $? -ne 0 ]
-   then  
+then  
     yum install $package -y  &>> $LOGFILE
     validate  $? "  installation of package "
-   else
+else
 echo -e "$package already installed...$Y skipped $N"
-    fi
+fi
 done 
