@@ -38,7 +38,7 @@ for packages in $0
 do 
 yum list installed $packages  &>> $LOGFILE
 
-if [ $1 -ne 0 ]
+if [ $? -ne 0 ]
 then  
 yum install $packages -y  &>> $LOGFILE
 
