@@ -6,7 +6,7 @@ N="\e[0m"
 
 TIMESTAMP=$(date +"%d-%m-%y-%H-%M-%S")
 
-LOGFILE="/tmp/$0 $TIMESTAMP/.log"
+LOGFILE="/temp/$0 $TIMESTAMP/.log"
 
 validate(){
      if [ $1 -ne 0 ]
