@@ -41,8 +41,7 @@ yum list installed $packages  &>> $LOGFILE
 if [ $? -ne 0 ]
 then  
 yum install $packages -y  &>> $LOGFILE
-
-validate  $1 "  installation of package $N"
+validate  $1 "  installation of package "
 else
 echo -e "$packge already installed...$Y skipped $N"
 fi
