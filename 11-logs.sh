@@ -20,10 +20,10 @@ validate(){
 
 if [ $ID -ne 0 ]
 then
-    echo -e " Error:: $R stop the script and run with root access"
+    echo -e " Error:: $R stop the script and run with root access $N"
     exit 1
 else
-    echo -e  " $G you are root user"
+    echo -e  "  you are root user"
 fi
 
 
