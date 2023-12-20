@@ -1,33 +1,37 @@
+#!/bin/bash
+
 ID=$(id -u)
+TIMESTAMP=$(date +%F-%H-%M-%S)
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-TIMESTAMP=$(date +"%d-%m-%y-%H-%M-%S")
+echo "Script started executing at $TIMESTAMP" &>> $LOGFILE
 
-LOGFILE="/tmp/$0-$TIMESTAMP/.log"
-
-validate(){
-     if [ $1 -ne 0 ]
+VALIDATE(){
+    if [ $1 -ne 0 ]
     then
-     echo  -e "Error :: $2......   FAILED "
-     exit 1
+        echo -e "ERROR:: $2 ... $R FAILED $N"
+        exit 1
     else
-     echo -e  "$2.....  success "
+        echo -e "$2 ... $G SUCCESS $N"
     fi
 }
 
 if [ $ID -ne 0 ]
 then
-    echo -e  " Error:: stop the script and run with root access"
-    exit 1
+    echo -e "$R ERROR:: Please run this script with root access $N"
+    exit 1 # you can give other than 0
 else
-    echo -e "  you are root user"
-fi
-
+    echo "You are root user"
+fi # fi means reverse of if, indicating condition end
 
 yum install mysql -y &>> $LOGFILE
 
-validate $? "installing MYSQL"
+VALIDATE $? "Installing MySQL"
 
-yum install git -y  &>> $LOGFILE
+yum install git -y &>> $LOGFILE
 
-validate $? "installing GIT"
+VALIDATE $? "Installing GIT"
