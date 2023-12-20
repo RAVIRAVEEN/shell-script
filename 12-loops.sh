@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for i in {1...6}
+for i in {1...10}
 do 
-  echo " $i"
+  echo "$i"
 done
 
