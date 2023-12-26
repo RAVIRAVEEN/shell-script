@@ -13,3 +13,5 @@ partition=$(echo $line | awk '{print $1f}')
    message="high disk usage on {partition : $usage"}
    fi
  done <<< $DISK_USAGE
+
+ echo "message : $message"
