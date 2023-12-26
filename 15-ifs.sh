@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=/etc/passwd
+FILE="/etc/passwd"
 
 R="\e[31m"
 G="\e[32m"
@@ -21,4 +21,4 @@ echo "username: $username"
 echo "password: $password"
 echo "user_id : $user_id"
 echo "user_fullname :$user_fullname" 
-done
+done <  $FILE
