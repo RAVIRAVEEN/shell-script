@@ -62,4 +62,4 @@ docker compose version
 
 VALIDATE $? "Installed docker compose"
 
-echo -e "$R Logout and login again $N"
+  echo -e "$R Logout and login again $N"
